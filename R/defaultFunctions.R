@@ -95,7 +95,7 @@ bootnet_correlate <- function(data, corMethod =  c("cor","cor_auto","cov","npn",
         args[[names(corArgs)[[i]]]] <- corArgs[[i]]
       }
     }
-    corMat <- do.call(qgraph::cor_auto,args)
+    corMat <- do.call(EGAnet::auto.correlate,args)
   } else if (corMethod%in%c("cor","cov","spearman")){
     # Normal correlations
     if (missing == "fiml"){
